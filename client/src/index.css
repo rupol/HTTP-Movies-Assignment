@@ -100,3 +100,34 @@ body {
   color     : red;
   text-align: center;
 }
+
+.form-title {
+  font-size  : 1.5em;
+  font-weight: bold;
+}
+
+.form-director {
+  font-style: italic;
+  font-size : 0.8rem;
+}
+
+.form-metascore {
+  font-weight: bold;
+  font-size  : 1rem;
+}
+
+.update-button {
+  position        : absolute;
+  top             : 25px;
+  right           : 25px;
+  border          : 1px solid grey;
+  padding         : 5px 10px;
+  background-color: plum;
+  color           : black;
+  font-size       : 1rem;
+}
+
+.update-button:hover {
+  background-color: purple;
+  color           : white;
+}
