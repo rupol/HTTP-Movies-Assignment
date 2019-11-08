@@ -1,174 +1,412 @@
-body {
-  margin          : 0;
-  padding         : 0;
-  font-family     : sans-serif;
-  background-color: #f2f2f2;
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin        : 0;
+  padding       : 0;
+  border        : 0;
+  font-size     : 100%;
+  font          : inherit;
+  vertical-align: baseline;
 }
 
-.movie-card {
-  background-color: #fff;
-  border          : 2px solid #fff;
-  box-shadow      : 0 -1px 0 #e0e0e0, 0 0 2px rgba(0, 0, 0, 0.12),
-    0 2px 4px rgba(0, 0, 0, 0.24);
-  padding : 1rem;
-  cursor  : pointer;
-  position: relative;
-  margin  : 1rem auto;
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing : 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size  : 62.5%;
+  text-align : center;
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+/* /////////// STYLING ////////// */
+
+section,
+aside,
+footer {
+  margin : 0;
+  padding: 2rem;
+  color  : #000000;
+}
+
+main {
+  background-color: #fbfaef;
+}
+
+h1 {
+  font-family   : 'Candal', sans-serif;
+  text-transform: uppercase;
+  padding-bottom: 4rem;
+  font-size     : 5rem;
+  margin        : 2rem 1%;
+}
+
+h3,
+h4,
+h5,
+p {
+  padding-bottom: 0.5rem;
+}
+
+h2 {
+  font-family   : 'Candal', sans-serif;
+  font-size     : 3.5rem;
+  font-weight   : 600;
+  text-transform: uppercase;
+  letter-spacing: .5rem;
+  font-size     : 2.5rem;
+  margin        : 1rem;
+}
+
+h3 {
+  font-size: 2.2rem;
+  margin   : .5rem;
+}
+
+h4 {
+  font-size: 2rem;
+}
+
+h5 {
+  font-size : 1.75rem;
+  font-style: italic;
+}
+
+p {
+  font-size  : 1.75rem;
+  line-height: 2.25rem;
 }
 
 a {
   text-decoration: none;
-  color          : #000;
 }
 
-.movie-card-home a:hover {
-  /* border       : 2px solid #000; */
-  background-color: cadetblue;
+nav {
+  width           : 100%;
+  height          : 80px;
+  z-index         : 5;
+  background-color: #e6673e;
+  display         : flex;
+  flex-flow       : row wrap;
+  justify-content : space-evenly;
+  align-items     : flex-end;
 }
 
-.movie-director {
-  padding  : 4px 0;
-  font-size: 0.8rem;
+.logo {
+  color         : #000000;
+  font-size     : 2.5rem;
+  font-family   : 'Candal', sans-serif;
+  text-transform: uppercase;
+  padding       : 25px 20px;
+  margin        : 0;
 }
 
-.saved-list {
+nav a {
+  text-decoration: none;
+  color          : #000000;
+  font-size      : 1.75rem;
+  font-family    : 'Candal', sans-serif;
+  text-transform : uppercase;
+  padding        : 25px 20px;
+}
+
+nav a.active {
   background-color: #fff;
-  border          : 0;
-  box-shadow      : 0 -1px 0 #e0e0e0, 0 0 2px rgba(0, 0, 0, 0.12),
-    0 2px 4px rgba(0, 0, 0, 0.24);
-  padding        : 1rem;
-  cursor         : pointer;
-  position       : relative;
-  margin         : 1rem auto;
-  width          : 75%;
+}
+
+form {
+  max-width       : 500px;
+  margin          : 0 auto;
+  padding         : 2rem;
+  border          : none;
+  background-color: #000;
+  display         : flex;
+  flex-wrap       : wrap;
+  align-items     : center;
+  justify-content : center;
+}
+
+input {
+  width           : 100%;
+  height          : 6rem;
+  border          : none;
+  outline         : none;
+  padding         : 0 2rem;
+  font-size       : 2.5rem;
+  font-family     : 'Source Sans Pro', sans-serif;
+  font-weight     : 600;
+  text-transform  : uppercase;
+  letter-spacing  : .5rem;
+  color           : #000;
+  background-color: #e6673e;
+  margin          : 1rem 10px 2rem;
+
+}
+
+input::placeholder {
+  color: #000;
+}
+
+label {
+  font-size: 2.2rem;
+  margin   : .5rem;
+}
+
+.btn {
+  height                 : 50px;
+  width                  : 70%;
+  text-align             : center;
+  -webkit-text-decoration: none;
+  text-decoration        : none;
+  border                 : none;
+  color                  : #000;
+  background-color       : #06aed5;
+  font-family            : 'Source Sans Pro', sans-serif;
+  font-weight            : 600;
+  text-transform         : uppercase;
+  letter-spacing         : .5rem;
+  font-size              : 2.5rem;
+  padding                : 1rem;
+  margin                 : 2rem;
+}
+
+.btn:hover {
+  background-color: #91ebff;
+}
+
+.movie-card {
+  max-width       : 800px;
+  margin          : 3rem auto;
+  padding         : 2rem;
+  border          : none;
+  background-color: #000;
+  color           : #fff;
+}
+
+.movie-buttons {
   display        : flex;
+  flex-wrap      : nowrap;
   align-items    : center;
-  justify-content: space-between;
+  justify-content: center;
 }
 
-.saved-list h3 {
-  margin-right: 10px;
-}
-
-.saved-movie {
-  margin: 0 10px;
-}
-
-.saved-active {
-  color  : blue;
-  padding: 5px;
-}
-
-.save-wrapper {
-  position: relative;
-  width   : 75%;
-  margin  : 1rem auto;
+.movie-buttons a,
+.movie-buttons div {
+  height                 : 50px;
+  width                  : 50px;
+  text-align             : center;
+  -webkit-text-decoration: none;
+  text-decoration        : none;
+  border                 : none;
+  color                  : #000;
+  margin                 : 2rem;
+  padding                : 14px;
 }
 
 .save-button {
-  position        : absolute;
-  top             : 25px;
-  right           : 25px;
-  padding         : 5px 10px;
-  background-color: lightseagreen;
+  background-color: #3CB371;
 }
 
 .save-button:hover {
-  background-color: green;
-  color           : white;
-}
-
-.edit-button {
-  position        : absolute;
-  top             : 65px;
-  right           : 25px;
-  padding         : 5px 10px;
-  background-color: peachpuff;
-  text-decoration : none;
-  color           : black;
-}
-
-.edit-button:hover {
-  background-color: lightcoral;
-  color           : white;
+  background-color: rgb(111, 240, 169);
 }
 
 .delete-button {
-  position        : absolute;
-  top             : 200px;
-  right           : 25px;
-  padding         : 5px 10px;
-  background-color: indianred;
-  text-decoration : none;
-  color           : black;
+  background-color: #e6673e;
 }
 
 .delete-button:hover {
-  background-color: firebrick;
-  color           : white;
+  background-color: #ee835f;
 }
 
-.home-button {
-  position        : absolute;
-  top             : 30px;
-  right           : 150px;
-  padding         : 5px 10px;
-  background-color: lightskyblue;
-  text-decoration : none;
-  color           : black;
+.edit-button {
+  background-color: #f3cc40;
 }
 
-.home-button:hover {
-  background-color: deepskyblue;
-  color           : white;
+.edit-button:hover {
+  background-color: #fce17f;
 }
 
-.add-button {
-  position        : absolute;
-  top             : 30px;
-  right           : 25px;
-  padding         : 5px 10px;
-  background-color: lightskyblue;
-  text-decoration : none;
-  color           : black;
+.saved-wrapper {
+  background-color: #c9c9c9;
+  width           : 90%;
+  margin          : 2rem auto;
+  padding         : 1rem;
 }
 
-.add-button:hover {
-  background-color: deepskyblue;
-  color           : white;
+.saved-list {
+  display        : flex;
+  flex-wrap      : wrap;
+  justify-content: space-evenly;
+  align-items    : center;
 }
 
-.movie-warning {
-  color     : red;
-  text-align: center;
+.saved-list a {
+  width    : 220px;
+  color    : #000000;
+  font-size: 2rem;
+  margin   : 1rem 10px;
+  padding  : 1rem;
 }
 
-.form-title {
-  font-size  : 1.5em;
-  font-weight: bold;
+.saved-list a.active {
+  background-color: #fff;
 }
 
-.form-director {
-  font-style: italic;
-  font-size : 0.8rem;
+@media (max-width: 910px) {
+
+  .movie-card,
+  form {
+    width: 90%;
+  }
 }
 
-.form-metascore {
-  font-weight: bold;
-  font-size  : 1rem;
-}
 
-.update-button {
-  position        : absolute;
-  top             : 25px;
-  right           : 25px;
-  padding         : 5px 10px;
-  background-color: plum;
-  color           : black;
-  font-size       : 1rem;
-}
+@media (max-width: 600px) {
+  .logo {
+    font-size: 1.8rem;
+    padding  : 22px 10px;
+  }
 
-.update-button:hover {
-  background-color: purple;
-  color           : white;
+  nav a {
+    text-decoration: none;
+    color          : #000000;
+    font-size      : 1.25rem;
+    padding        : 25px 5px;
+  }
+
+  form {
+    padding: 2rem 1.5rem;
+  }
+
+  input,
+  button {
+    font-size     : 1.5rem;
+    letter-spacing: .3rem;
+  }
 }

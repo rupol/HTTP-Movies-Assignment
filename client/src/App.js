@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Route } from "react-router-dom";
+import { Route, NavLink } from "react-router-dom";
 import SavedList from "./Movies/SavedList";
 import MovieList from "./Movies/MovieList";
 import Movie from "./Movies/Movie";
@@ -15,6 +15,16 @@ const App = () => {
 
   return (
     <>
+      <nav>
+        <h1 className="logo">MovieList</h1>
+        <NavLink exact to="/">
+          My Movies
+        </NavLink>
+        <NavLink exact to="/add-movie">
+          Add a Movie
+        </NavLink>
+      </nav>
+
       <SavedList list={savedList} />
       <Route exact path="/" component={MovieList} />
       <Route
