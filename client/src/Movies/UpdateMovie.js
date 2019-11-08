@@ -10,10 +10,23 @@ function UpdateMovie(props) {
     stars: []
   });
 
+  const [actors, setActors] = useState({
+    actor1: "",
+    actor2: "",
+    actor3: ""
+  });
+
   useEffect(() => {
     axios
       .get(`http://localhost:5000/api/movies/${props.match.params.id}`)
-      .then(res => setMovie(res.data))
+      .then(res => {
+        setMovie(res.data);
+        setActors({
+          actor1: res.data.stars[0],
+          actor2: res.data.stars[1],
+          actor3: res.data.stars[2]
+        });
+      })
       .catch(err => console.log(err.response));
   }, [props.match.params.id]);
 
@@ -24,8 +37,24 @@ function UpdateMovie(props) {
     });
   };
 
+  const handleActorChange = event => {
+    setActors({
+      ...actors,
+      [event.target.name]: event.target.value
+    });
+  };
+
   const handleSubmit = event => {
     event.preventDefault();
+
+    setMovie({
+      ...movie,
+      stars: []
+    });
+
+    movie.stars[0] = actors.actor1;
+    movie.stars[1] = actors.actor2;
+    movie.stars[2] = actors.actor3;
 
     axios
       .put(`http://localhost:5000/api/movies/${movie.id}`, movie)
@@ -67,8 +96,32 @@ function UpdateMovie(props) {
           />
         </div>
         <h3>Actors</h3>
+        <input
+          className="form-star"
+          type="text"
+          name="actor1"
+          placeholder={actors.actor1}
+          value={actors.actor1}
+          onChange={handleActorChange}
+        />
+        <input
+          className="form-star"
+          type="text"
+          name="actor2"
+          placeholder={actors.actor2}
+          value={actors.actor2}
+          onChange={handleActorChange}
+        />
+        <input
+          className="form-star"
+          type="text"
+          name="actor3"
+          placeholder={actors.actor3}
+          value={actors.actor3}
+          onChange={handleActorChange}
+        />
 
-        {movie.stars.map(star => (
+        {/* {movie.stars.map(star => (
           <div key={star} className="movie-star">
             <input
               className="form-star"
@@ -79,7 +132,7 @@ function UpdateMovie(props) {
               onChange={handleChange}
             />
           </div>
-        ))}
+        ))} */}
         <button className="update-button" type="submit">
           Update Movie
         </button>
