@@ -103,13 +103,35 @@ body {
 }
 
 .home-button {
+  position        : absolute;
+  top             : 30px;
+  right           : 150px;
+  border          : 1px solid grey;
   padding         : 5px 10px;
   background-color: lightskyblue;
+  text-decoration : none;
+  color           : black;
 }
 
-.home-button a {
-  text-decoration: none;
-  color          : black;
+.home-button:hover {
+  background-color: deepskyblue;
+  color           : white;
+}
+
+.add-button {
+  position        : absolute;
+  top             : 30px;
+  right           : 25px;
+  border          : 1px solid grey;
+  padding         : 5px 10px;
+  background-color: lightskyblue;
+  text-decoration : none;
+  color           : black;
+}
+
+.add-button:hover {
+  background-color: deepskyblue;
+  color           : white;
 }
 
 .movie-warning {
