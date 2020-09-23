@@ -1,77 +1,412 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin        : 0;
+  padding       : 0;
+  border        : 0;
+  font-size     : 100%;
+  font          : inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
 body {
-  margin: 0;
-  padding: 0;
-  font-family: sans-serif;
-  background-color: #f2f2f2;
+  line-height: 1;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing : 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size  : 62.5%;
+  text-align : center;
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+/* /////////// STYLING ////////// */
+
+section,
+aside,
+footer {
+  margin : 0;
+  padding: 2rem;
+  color  : #000000;
+}
+
+main {
+  background-color: #fbfaef;
+}
+
+h1 {
+  font-family   : 'Candal', sans-serif;
+  text-transform: uppercase;
+  padding-bottom: 4rem;
+  font-size     : 5rem;
+  margin        : 2rem 1%;
+}
+
+h3,
+h4,
+h5,
+p {
+  padding-bottom: 0.5rem;
+}
+
+h2 {
+  font-family   : 'Candal', sans-serif;
+  font-size     : 3.5rem;
+  font-weight   : 600;
+  text-transform: uppercase;
+  letter-spacing: .5rem;
+  font-size     : 2.5rem;
+  margin        : 1rem;
+}
+
+h3 {
+  font-size: 2.2rem;
+  margin   : .5rem;
+}
+
+h4 {
+  font-size: 2rem;
+}
+
+h5 {
+  font-size : 1.75rem;
+  font-style: italic;
+}
+
+p {
+  font-size  : 1.75rem;
+  line-height: 2.25rem;
+}
+
+a {
+  text-decoration: none;
+}
+
+nav {
+  width           : 100%;
+  height          : 80px;
+  z-index         : 5;
+  background-color: #e6673e;
+  display         : flex;
+  flex-flow       : row wrap;
+  justify-content : space-evenly;
+  align-items     : flex-end;
+}
+
+.logo {
+  color         : #000000;
+  font-size     : 2.5rem;
+  font-family   : 'Candal', sans-serif;
+  text-transform: uppercase;
+  padding       : 25px 20px;
+  margin        : 0;
+}
+
+nav a {
+  text-decoration: none;
+  color          : #000000;
+  font-size      : 1.75rem;
+  font-family    : 'Candal', sans-serif;
+  text-transform : uppercase;
+  padding        : 25px 20px;
+}
+
+nav a.active {
+  background-color: #fff;
+}
+
+form {
+  max-width       : 500px;
+  margin          : 0 auto;
+  padding         : 2rem;
+  border          : none;
+  background-color: #000;
+  display         : flex;
+  flex-wrap       : wrap;
+  align-items     : center;
+  justify-content : center;
+}
+
+input {
+  width           : 100%;
+  height          : 6rem;
+  border          : none;
+  outline         : none;
+  padding         : 0 2rem;
+  font-size       : 2.5rem;
+  font-family     : 'Source Sans Pro', sans-serif;
+  font-weight     : 600;
+  text-transform  : uppercase;
+  letter-spacing  : .5rem;
+  color           : #000;
+  background-color: #e6673e;
+  margin          : 1rem 10px 2rem;
+
+}
+
+input::placeholder {
+  color: #000;
+}
+
+label {
+  font-size: 2.2rem;
+  margin   : .5rem;
+}
+
+.btn {
+  height                 : 50px;
+  width                  : 70%;
+  text-align             : center;
+  -webkit-text-decoration: none;
+  text-decoration        : none;
+  border                 : none;
+  color                  : #000;
+  background-color       : #06aed5;
+  font-family            : 'Source Sans Pro', sans-serif;
+  font-weight            : 600;
+  text-transform         : uppercase;
+  letter-spacing         : .5rem;
+  font-size              : 2.5rem;
+  padding                : 1rem;
+  margin                 : 2rem;
+}
+
+.btn:hover {
+  background-color: #91ebff;
 }
 
 .movie-card {
-  background-color: #fff;
-  border: 0;
-  box-shadow: 0 -1px 0 #e0e0e0, 0 0 2px rgba(0, 0, 0, 0.12),
-    0 2px 4px rgba(0, 0, 0, 0.24);
-  padding: 1rem;
-  cursor: pointer;
-  position: relative;
-  margin: 1rem auto;
+  max-width       : 800px;
+  margin          : 3rem auto;
+  padding         : 2rem;
+  border          : none;
+  background-color: #000;
+  color           : #fff;
 }
 
-.movie-director {
-  padding: 4px 0;
-  font-size: 0.8rem;
+.movie-buttons {
+  display        : flex;
+  flex-wrap      : nowrap;
+  align-items    : center;
+  justify-content: center;
+}
+
+.movie-buttons a,
+.movie-buttons div {
+  height                 : 50px;
+  width                  : 50px;
+  text-align             : center;
+  -webkit-text-decoration: none;
+  text-decoration        : none;
+  border                 : none;
+  color                  : #000;
+  margin                 : 2rem;
+  padding                : 14px;
+}
+
+.save-button {
+  background-color: #3CB371;
+}
+
+.save-button:hover {
+  background-color: rgb(111, 240, 169);
+}
+
+.delete-button {
+  background-color: #e6673e;
+}
+
+.delete-button:hover {
+  background-color: #ee835f;
+}
+
+.edit-button {
+  background-color: #f3cc40;
+}
+
+.edit-button:hover {
+  background-color: #fce17f;
+}
+
+.saved-wrapper {
+  background-color: #c9c9c9;
+  width           : 90%;
+  margin          : 2rem auto;
+  padding         : 1rem;
 }
 
 .saved-list {
+  display        : flex;
+  flex-wrap      : wrap;
+  justify-content: space-evenly;
+  align-items    : center;
+}
+
+.saved-list a {
+  width    : 220px;
+  color    : #000000;
+  font-size: 2rem;
+  margin   : 1rem 10px;
+  padding  : 1rem;
+}
+
+.saved-list a.active {
   background-color: #fff;
-  border: 0;
-  box-shadow: 0 -1px 0 #e0e0e0, 0 0 2px rgba(0, 0, 0, 0.12),
-    0 2px 4px rgba(0, 0, 0, 0.24);
-  padding: 1rem;
-  cursor: pointer;
-  position: relative;
-  margin: 1rem auto;
-  width: 75%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
 }
 
-.saved-list h3 {
-  margin-right: 10px;
+@media (max-width: 910px) {
+
+  .movie-card,
+  form {
+    width: 90%;
+  }
 }
 
-.saved-movie {
-  margin: 0 10px;
-}
-.saved-active {
-  color: blue;
-  border: 1px solid grey;
-  padding: 5px;
-}
-.save-wrapper {
-  position: relative;
-  width: 75%;
-  margin: 1rem auto;
-}
-.save-button {
-  position: absolute;
-  top: 25px;
-  right: 25px;
-  border: 1px solid grey;
-  padding: 5px 10px;
-  background-color: lightseagreen;
-}
-.save-button:hover {
-  background-color: green;
-  color: white;
-}
 
-.home-button {
-  padding: 5px 10px;
-  background-color: lightskyblue;
-}
+@media (max-width: 600px) {
+  .logo {
+    font-size: 1.8rem;
+    padding  : 22px 10px;
+  }
 
-.movie-warning {
-  color: red;
-  text-align: center;
+  nav a {
+    text-decoration: none;
+    color          : #000000;
+    font-size      : 1.25rem;
+    padding        : 25px 5px;
+  }
+
+  form {
+    padding: 2rem 1.5rem;
+  }
+
+  input,
+  button {
+    font-size     : 1.5rem;
+    letter-spacing: .3rem;
+  }
 }

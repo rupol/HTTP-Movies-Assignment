@@ -1,8 +1,10 @@
 import React, { useState } from "react";
-import { Route } from "react-router-dom";
+import { Route, NavLink } from "react-router-dom";
 import SavedList from "./Movies/SavedList";
 import MovieList from "./Movies/MovieList";
 import Movie from "./Movies/Movie";
+import UpdateMovie from "./Movies/UpdateMovie";
+import AddMovie from "./Movies/AddMovie";
 
 const App = () => {
   const [savedList, setSavedList] = useState([]);
@@ -13,6 +15,16 @@ const App = () => {
 
   return (
     <>
+      <nav>
+        <h1 className="logo">MovieList</h1>
+        <NavLink exact to="/">
+          My Movies
+        </NavLink>
+        <NavLink exact to="/add-movie">
+          Add a Movie
+        </NavLink>
+      </nav>
+
       <SavedList list={savedList} />
       <Route exact path="/" component={MovieList} />
       <Route
@@ -21,6 +33,8 @@ const App = () => {
           return <Movie {...props} addToSavedList={addToSavedList} />;
         }}
       />
+      <Route exact path="/update-movie/:id" component={UpdateMovie} />
+      <Route exact path="/add-movie" component={AddMovie} />
     </>
   );
 };
